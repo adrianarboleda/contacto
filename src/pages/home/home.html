@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Contactos
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="clickAdd()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style = "background-color: #7EA16B">
+      <ion-item *ngFor="let contacto of contactos" style = "background-color: #7EA16B" 
+      (click)="clickInfo(contacto.nombre, contacto.telefono, contacto.correo,
+                contacto.facebook, contacto.twitter, contacto.instagram, contacto.img)"> 
+            <ion-avatar item-start><img [src] = "contacto.img">  </ion-avatar>
+                     
+            <h2>{{contacto.nombre}}</h2>
+            <h5 style = "color:antiquewhite">{{contacto.telefono}}</h5>
+      </ion-item>
+</ion-content>
